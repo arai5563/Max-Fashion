@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sign In</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #cont {
+            width: 50%;
+            margin: 40px 0 0 33%;
+        }
+        h1 {
+            font-weight: 400;
+        }
+        h4 {
+            margin-bottom: 0px;
+        }
+        .light, ::placeholder {
+            color: #9E9E9E;
+            font-size: 15px;
+        }
+        input {
+            border: #9E9E9E solid 1px;
+            width: 550px;
+            height: 40px;
+            outline: none;
+        }
+        span {
+            color: #0D47A1;
+        }
+        button {
+            background-color: #0D47A1;
+            color: white;
+            width: 200px;
+            height: 55px;
+            margin-left: 30px;
+        }
+        #cont > div {
+            display: inline-block;
+            width: 48%;
+        }
+        hr {
+            width: 490px;
+            margin: 20px 5px 20px 30px;
+            border-top: 0px solid #9E9E9E
+        } 
+        .check {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <h1>Sign up or Sign in</h1>
+        <p class="light">Enjoy the convenience of a single account across all participating brands</p>
+        <h4>Mobile Number</h4>
+        <form>
+        <input type="number" placeholder="Enter your mobile number"/>
+        </form>
+        <p>By creating your account you agree to our <span>Terms and Conditions</span></p>
+        <hr/>
+        <div>
+            <p>Login with email? <a href="signin.html"><span>Click here</span></a> </p>
+        </div>
+        <div id="but">
+            <button onclick="saveNum()">CONTINUE</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var frm = document.getElementsByTagName("form");
+    frm[0].childNodes[1].addEventListener("focus", changeBorder);
+    frm[0].childNodes[1].addEventListener("blur", repBorder);
+    
+
+    var number = document.getElementsByTagName("input");
+
+    if(localStorage.getItem("contacts") == null)
+    {
+        var con = [];
+        localStorage.setItem("contacts", JSON.stringify(con));
+    }
+
+    function saveNum() {
+        if(number[0].value.length == 10)
+        {
+            var con = JSON.parse(localStorage.getItem("contacts"));
+            var obj = {
+                Mobile: number[0].value
+            };
+            var para = document.getElementsByClassName("check");
+            if(para[0] != undefined)
+            {
+                para[0].remove();
+            }
+            con.push(obj);
+            localStorage.setItem("contacts", JSON.stringify(con));
+            number[0].value = "";
+            window.location.href = "linkAccount.html";
+        }
+        else
+        {
+            var error = document.createElement("p");
+            error.textContent = "Please enter a valid 10-digit mobile number.";
+            error.style.fontSize = "12px";
+            error.style.marginLeft = "310px"
+            error.setAttribute("class", "check");
+            frm[0].appendChild(error);
+        }
+    }
+
+    function changeBorder(event) {
+        event.target.style.border = "#0D47A1 solid 2px"; 
+    }
+
+    function repBorder(event) {
+        event.target.style.border = "#9E9E9E solid 1px"; 
+    }
+
+</script>
