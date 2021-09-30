@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Products</title>
+    <style>
+        input {
+            border: black solid 2px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <form>
+            <tr>
+                <td>
+                    <label> Name => </label>
+                </td>
+                <td>
+                    <input type="text" id="nm"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label> image => </label>
+                </td>
+                <td>
+                    <input type="url" id="imge"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label> Price => </label>
+                </td>
+                <td>
+                    <input type="number" id="prc"/>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <button onclick="addToStorage()">Add Product</button>
+    <button onclick="addImages()">Add Images</button>
+</body>
+</html>
+
+<script>
+    let Name = document.getElementById("nm");
+    let image = document.getElementById("imge");
+    let Price = document.getElementById("prc");
+    
+    if(localStorage.getItem("menIndianwear") == null)
+    {
+        let list = [];
+        localStorage.setItem("menIndianwear", JSON.stringify(list));
+    }
+
+    var obj = {
+        Image : []
+    };
+
+    function addImages() {
+        obj.Image.push(image.value);
+        image.value ="";
+    }
+
+
+
+
+    function addToStorage() {
+        let list = JSON.parse(localStorage.getItem("menIndianwear"));
+            obj.Name = Name.value;
+            obj.Price = Price.value;
+        list.push(obj);
+        localStorage.setItem("menIndianwear", JSON.stringify(list));
+        image.value = "";
+        Name.value = "";
+        Price.value = "";
+        obj.Image = [];
+    }
+
+
+
+
+</script>
