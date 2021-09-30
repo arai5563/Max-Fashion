@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #cont {
+            width: 50%;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .light, ::placeholder {
+            color: #9E9E9E;
+        }
+        h1 {
+            font-weight: 600;
+        }
+        h5 {
+            margin-bottom: 0px;
+            text-align: left;
+            margin-left: 60px;
+        }
+        input {
+            border: #9E9E9E solid 1px;
+            width: 550px;
+            height: 40px;
+            outline: none;
+        }
+        button {
+            background-color: #0D47A1;
+            color: white;
+            width: 550px;
+            height: 55px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <h1>Sign In Now</h1>
+        <p class="light">Enjoy the convenience of a single account across all participating brands</p>
+        <p class="light">Sign in via Email</p>
+        <h5>Your Email</h5>
+        <form>
+        <input type="text"/>
+        </form>
+        <h5>Password</h5>
+        <form>
+        <input type="password"/>
+        </form>
+        <div id="but">
+            <button onclick="saveDetails()">SIGN IN</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+var frm = document.getElementsByTagName("form");
+    frm[0].childNodes[1].addEventListener("focus", changeBorder);
+    frm[0].childNodes[1].addEventListener("blur", repBorder);
+    frm[1].childNodes[1].addEventListener("focus", changeBorder);
+    frm[1].childNodes[1].addEventListener("blur", repBorder);
+
+
+    var users = document.getElementsByTagName("input");
+
+
+    function saveDetails() {
+        if(users[0].value != "" && users[1].value != "")
+        {
+            users[0].value = "";
+            window.location.href = "personal.html";
+        }
+        else
+        alert("Fill the details completely");
+    }
+
+
+
+
+    function changeBorder(event) {
+        event.target.style.border = "#0D47A1 solid 2px"; 
+    }
+
+    function repBorder(event) {
+        event.target.style.border = "#9E9E9E solid 1px"; 
+    }
+    
+
+
+
+</script>
