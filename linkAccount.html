@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Account</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #cont {
+            width: 40%;
+            margin: 40px 0 0 33%;
+        }
+        h1 {
+            font-weight: 400;
+        }
+        .light, ::placeholder {
+            color: #9E9E9E;
+        }
+        button {
+            background-color: #0D47A1;
+            color: white;
+            width: 200px;
+            height: 55px;
+            margin-left: 353px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 15px;
+        }
+        input {
+            border: #9E9E9E solid 1px;
+            width: 550px;
+            height: 40px;
+            outline: none;
+        }
+        .check {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <h1>Link your account</h1>
+        <p class="light">Existing User please login to your account to link your account to your phone number. it's one life time process</p>
+        <form>
+        <input type="text" placeholder="Your Email"/>
+        </form>
+        <div id="but">
+            <button onclick="saveMail()">PROCEED</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    var frm = document.getElementsByTagName("form");
+    frm[0].childNodes[1].addEventListener("focus", changeBorder);
+    frm[0].childNodes[1].addEventListener("blur", repBorder);
+    
+
+    var mail = document.getElementsByTagName("input");
+
+    function saveMail() {
+        if(mail[0].value.length != 0)
+        {
+            var con = JSON.parse(localStorage.getItem("contacts"));
+            con[con.length - 1].Email = mail[0].value;
+            localStorage.setItem("contacts", JSON.stringify(con));
+            var para = document.getElementsByClassName("check");
+            console.log(para);
+            if(para[0] != undefined)
+            {
+                para[0].remove();
+            }
+            mail[0].value = "";
+            window.location.href = "personal.html";
+        }
+        else
+        {
+            var error = document.createElement("p");
+            error.textContent = "Please enter a valid Email Id.";
+            error.setAttribute("class", "check");
+            error.style.fontSize = "12px";
+            error.style.marginLeft = "70%"
+            frm[0].appendChild(error);
+        }
+    }
+
+    function changeBorder(event) {
+        event.target.style.border = "#0D47A1 solid 2px"; 
+    }
+
+    function repBorder(event) {
+        event.target.style.border = "#9E9E9E solid 1px"; 
+    }
+
+</script>
