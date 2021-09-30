@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Online Shopping at Max</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav {
+            padding: 10px 15px;
+            background-color: #F7F8F7;
+            margin-bottom: 20px;
+        }
+        #nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        #nav button {
+            height: 40px;
+            vertical-align: middle;
+            width: 70px;
+            border: none;
+            background-color: #F7F8F7;
+            font-weight: 600;
+        }
+        #search > input {
+            height: 36px;
+            vertical-align: middle;
+            width: 94%;
+            outline: none;
+            border: none;
+            background-color: #ECEDEB;
+            vertical-align: middle;
+        }
+        #hicust {
+            display: inline-block;
+            width: 100px;
+            border-right: 1px solid #ECEDEB;
+        }
+        #search {
+            background-color: #ECEDEB;
+            display: inline-block;
+            width: 35%;
+            margin-right: 17%;
+        }
+        #search i {
+            color: #757575;
+            vertical-align: middle;
+        }
+        #cart {
+            display: inline-block;
+            width: 7%;
+        } 
+        #cart > i, #cart > button {
+            vertical-align: middle;
+        } 
+        .cat:hover {
+            color: #303AB2;
+        }
+        #offer {
+            background-color: #303AB2;
+            text-align: center;
+            color: white;
+            padding: 1px;
+        }
+        #hicust > button {
+            width: 95px;
+        }
+        #slideshow {
+            width: 90%;
+            margin: 0 auto 50px;
+        }
+        #slideshow > img {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        #freeshiping {
+            width: 90%;
+            margin: 50px auto 0;
+            background-color: goldenrod;
+            padding: 0;
+            text-align: center;
+            color: indigo;
+            font-weight: lighter;
+        }
+        h4 {
+            margin-bottom: 4px;
+        }
+        #SbyC {
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15% 15%;
+            gap: 2%;
+            text-align: center;
+        }
+        #SbyC img {
+            width: 100%;
+        }
+        p {
+            font-weight: bolder;
+        }
+        h1 {
+            font-weight: 400;
+            margin-left: 5%;
+        }
+        .singlePic {
+            width: 90%;
+            margin: 0 auto 50px;
+        }
+        .singlePic img, .twoPic img {
+            width: 100%;
+        }
+        .twoPic{
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 49% 49%;
+            gap: 2%;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href=""><button class="cat">Women</button></a>
+        <a href=""><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href=""><button class="cat">Boys</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <div id="hicust">
+            <button id="hi"></button>
+            
+        </div>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+    <div id="offer">
+        <p>Flat <span><i class='bx bx-rupee'></i></span>500 off on orders above <span><i class='bx bx-rupee'></i></span>2499. Code: MAX500 ></p>
+    </div>
+
+    <div id="freeshiping">
+        <h4>FREE SHIPPING ON ALL ORDERS !</h4>
+    </div>
+
+   <div id="slideshow">
+        <img/>
+   </div>
+   <h1>Shop By Category</h1>
+   <div id="SbyC">
+    
+   </div>
+
+   <h1>Festive Launch</h1>
+   <div class="singlePic">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-modularblock7-oneBythree-A-Menn-20Sept2021.jpg"/>
+   </div>
+
+   <h1>Gifting Zone</h1>
+   <div class="singlePic">
+        <img src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/MAX-Friday/MAX2.O/desktop-modularblock14One-Men-17Sept2021.jpg"/>
+   </div>
+
+   <h1>Essentials Corner</h1>
+   <div class="twoPic">
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-modularblock16One-Men-17Sept2021.jpg"/>
+        </div>
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-modularblock16Two-Men-17Sept2021.jpg"/>
+        </div>
+   </div>
+
+   <h1>The Shirt Shop</h1>
+   <div class="twoPic">
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-10modularblock-oneBythree-A-Men-17Sept2021.jpg"/>
+        </div>
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-10modularblock-oneBythree-B-Men-17Sept20211.jpg"/>
+        </div>
+   </div>
+
+   <h1>Max Loves</h1>
+   <div class="singlePic">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-9modularblock-oneBythree-A-Men-17Sept2021.jpg"/>
+   </div>
+
+   <h1>Youth Store</h1>
+   <div class="singlePic">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/department-modularblock-oneBythree-A-Men-17Sept2021.jpg"/>
+   </div>
+
+   <h1>Most Loved Accessories</h1>
+   <div class="singlePic">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-modularblock-oneBythree-A-Menn-17Sept2021.jpg"/>
+   </div>
+
+    <div class="singlePic">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-modularblock-oneBythree-D-Men-17Sept2021.jpg"/>
+    </div>
+
+    <h1>Transitional Fashion</h1>
+   <div class="twoPic">
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-5modularblock-oneBytwo1C-Men-17Sept2021.jpg"/>
+        </div>
+        <div>
+            <img src="https://lmsin.net/cdn-cgi/image/w=616,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/desktop-department-modularblock-oneBythree-E-Men-17Sept2021.jpg"/>
+        </div>
+   </div>
+</body>
+</html>
+
+
+<script>
+    var welcome = document.getElementById("hi");
+    var con = JSON.parse(localStorage.getItem("contacts"));
+    welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+
+    slideImage_src = ["https://images.freekaamaal.com/post_images/1578980316.png", 
+    "https://www.exchange4media.com/news-photo/95322-maxmain.jpg", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUuwl77PRO9JxpSddEvG4I1kUuBVFMDElHg&usqp=CAU", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8xBurR0SwLNBkJvwspfZMZotUO7aweHUESA&usqp=CAU", 
+    "https://static.toiimg.com/thumb/msid-70520849,width-1200,height-900,resizemode-4/.jpg"];
+
+    
+    var slide = document.getElementById("slideshow");
+
+    var products_cat = document.getElementById("SbyC");
+
+    var shop_category = JSON.parse(localStorage.getItem("shopCat"));
+
+
+    function createCat(SC) {
+        SC.forEach(el => {
+            var nDiv = document.createElement("div");
+            var pic = document.createElement("img");
+            var category = document.createElement("p");
+            pic.src = el.Image;
+            category.textContent = el.Category;
+            nDiv.append(pic, category);
+            products_cat.appendChild(nDiv);
+        });
+    }
+
+
+    createCat(shop_category);
+
+    slide.childNodes[1].src = slideImage_src[0];
+    let c = 1;
+    
+    function showSlide() {
+        slide.childNodes[1].src = slideImage_src[c];
+        c++;
+        if(c == 5)
+        c = 0;
+    }
+    
+    
+
+    setInterval(showSlide, 5000);
+
+    var c1 = products_cat.childNodes[1];
+
+    c1.onclick = function() {
+        window.location.href = "indianwear.html";
+    }
+
+    var c2 = products_cat.childNodes[2];
+
+    c2.onclick = function() {
+        window.location.href = "shirts.html";
+    }
+
+
+    var c3 = products_cat.childNodes[3];
+
+    c3.onclick = function() {
+        window.location.href = "tees&polos.html";
+    }
+
+
+    var c4 = products_cat.childNodes[4];
+
+    c4.onclick = function() {
+        window.location.href = "loungewear.html";
+    }
+
+
+   
+
+
+
+
+</script>
