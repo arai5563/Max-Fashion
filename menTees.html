@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Men Tees & Polos Max-Fashion</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav {
+            padding: 10px 15px;
+            background-color: #F7F8F7;
+            margin-bottom: 20px;
+        }
+        #nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        #nav button {
+            height: 40px;
+            vertical-align: middle;
+            width: 70px;
+            border: none;
+            background-color: #F7F8F7;
+            font-weight: 600;
+        }
+        #search > input {
+            height: 36px;
+            vertical-align: middle;
+            width: 94%;
+            outline: none;
+            border: none;
+            background-color: #ECEDEB;
+            vertical-align: middle;
+        }
+        #hicust {
+            display: inline-block;
+            width: 100px;
+            border-right: 1px solid #ECEDEB;
+        }
+        #search {
+            background-color: #ECEDEB;
+            display: inline-block;
+            width: 35%;
+            margin-right: 17%;
+        }
+        #search i {
+            color: #757575;
+            vertical-align: middle;
+        }
+        #cart {
+            display: inline-block;
+            width: 7%;
+        } 
+        #cart > i, #cart > button {
+            vertical-align: middle;
+        } 
+        .cat:hover {
+            color: #303AB2;
+        }
+        #hicust > button {
+            width: 95px;
+        }
+        p {
+            font-size: 13px;
+        }
+        h1 {
+            font-weight: 400;
+            margin-left: 5%;
+        }
+        #container {
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 24% 24% 24% 24%;
+            gap: 1.33%;
+        }
+        #container img {
+            width: 100%;
+        }
+        #container button {
+            width: 100%;
+            background-color: #303AB2;
+            height: 50px;
+            color: white;
+            border: none;
+            border-radius: 3%;
+        }
+        .bolder {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href=""><button class="cat">Women</button></a>
+        <a href=""><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href=""><button class="cat">Boys</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <div id="hicust">
+            <button id="hi"></button>
+            
+        </div>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+
+    <h1>Tees & Polos</h1>
+    <div id="container">
+    
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    var welcome = document.getElementById("hi");
+    var con = JSON.parse(localStorage.getItem("contacts"));
+    welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+
+    var products = document.getElementById("container");
+
+    var men_Tees = JSON.parse(localStorage.getItem("menTees"));
+
+
+    function createCat(MT) {
+        MT.forEach(el => {
+            var nDiv = document.createElement("div");
+            var pic = document.createElement("img");
+            var Name = document.createElement("p");
+            var cost = document.createElement("p");
+            var addToBas = document.createElement("button");
+            addToBas.textContent = "ADD TO BASKET";
+            pic.src = el.Image;
+            Name.textContent = el.Name;
+            cost.textContent = el.Price;
+            cost.setAttribute("class", "bolder");
+            nDiv.append(pic, Name, cost, addToBas);
+            products.appendChild(nDiv);
+        });
+    }
+
+
+    createCat(men_Tees);
+
+
+</script>
