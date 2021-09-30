@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 1200px;
+            margin: auto;
+
+        }
+        #mySlideshow {
+            margin: auto;
+            width: 1200px;
+        }
+
+        #products {
+            border: 1px solid black;
+            margin: auto;
+
+            display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-gap: 5%;
+        justify-content: center;
+       width: 1050px;
+       height: 700px;
+        }
+        img {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+   
+<div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href=""><button class="cat">Women</button></a>
+        <a href=""><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href=""><button class="cat">Boys</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <div id="hicust">
+            <button id="hi"></button>
+        </div>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+    <h1>Boys Section</h1>
+    <div id="mySlideshow"> </div>
+
+    <div>
+        <p>Shop By Category</p>
+
+        <div id="products">
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
+
+<script>
+   let images = [
+    "https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/21/539088fb-e4e9-41db-9f56-9c5fb5838a251632242372729-Mst-Levis_Desk_Banner.jpg",
+    "https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/21/d6a317e7-6375-4509-840a-cc8a0a269b711632242372764-Mst-Boys-Indian-Wear.jpg",
+   "https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/21/afc5de55-3c5f-4ad8-bad0-22536acde7311632242372773-Mst-Allen-Solly.jpg"
+   ];
+
+
+let container = document.getElementById("mySlideshow");
+
+function startSlideshow() {
+//1.
+let counter = 0;
+
+let interval = setInterval (function(){
+
+    container.innerHTML = null;
+
+
+
+    if(counter === images.length) {
+        counter = 0;
+    }
+
+    let img = document.createElement("img");
+   img.src = images[counter]
+   container.append(img);
+   counter = counter + 1;
+
+}, 3000);
+
+   
+
+}
+ startSlideshow();
+
+
+ let data = [
+     {name : "Indian Wear",
+      img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-1-Desktop-Boys-17Sept2021.jpg"
+     },
+     {
+        name: "Shirts",
+        img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-2-Desktop-Boys-17Sept2021.jpg"
+    },
+    {
+        name : "Tees & Polos",
+        img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-3-Desktop-Boys-17Sept2021.jpg"
+    },
+    {
+        name : "Trousers",
+        img : "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-10-Desktop-Boys-17Sept2021.jpg"
+    },
+    {
+        name: "Footwear",
+        img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-11-Desktop-Boys-17Sept2021.jpg"
+    },
+    {
+        name: "Accessiories",
+        img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/PC-A-12-Desktop-Boys-17Sept2021.jpg"
+    },
+ ];
+ let parent = document.getElementById("products");
+
+ data.forEach(function(product){
+     console.log(product.name);
+
+     let div = document.createElement("div");
+
+     div.addEventListener("click",nextPage);
+    
+
+   
+
+     let img =document.createElement("img");
+      img.src = product.img
+
+    let product_name = document.createElement("p");
+    product_name.textContent = product.name
+
+   div.append(img,product_name);
+    parent.append(div);
+
+ });
+
+ var c1 = div.childNodes[1];
+ function nextPage(e){
+        window.location.href = "indian_wear.html" ;
+     }
+
+
+
+</script>
