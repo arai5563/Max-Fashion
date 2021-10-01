@@ -137,11 +137,12 @@
 
     var men_indianwear = JSON.parse(localStorage.getItem("menIndianwear"));
 
-    var pic = document.createElement("img");
+    
 
     function createCat(MIW) {
         MIW.forEach(el => {
             var nDiv = document.createElement("div");
+            var pic = document.createElement("img");
             var Name = document.createElement("p");
             var cost = document.createElement("p");
             var addToBas = document.createElement("button");
@@ -150,16 +151,22 @@
             Name.textContent = el.Name;
             cost.textContent = el.Price;
             cost.setAttribute("class", "bolder");
-            nDiv.append(pic, Name, cost, addToBas);
             nDiv.onmouseenter = function() {
-                slideShow(el);
+                slideShow(el, pic);
             }
+            nDiv.onmouseleave = function() {
+                stopSlide(el, pic);
+            }
+            nDiv.append(pic, Name, cost, addToBas);
             products.appendChild(nDiv);
         });
     }
-    let i = 0;
-    function slideShow(el) {
-        setInterval(divSlide, 2000);
+    
+    
+    var ss;
+    function slideShow(el, pic) {
+        ss = setInterval(divSlide, 3000);
+        let i = 1;
 
         function divSlide() {
             pic.src = el.Image[i];
@@ -168,6 +175,14 @@
             i = 0;
         }
     } 
+
+    function stopSlide(el, pic) {
+        clearInterval(ss);
+        pic.src = el.Image[0];
+    } 
+
+    
+    
 
     createCat(men_indianwear);
 
