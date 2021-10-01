@@ -92,6 +92,29 @@
         .bolder {
             font-weight: bolder;
         }
+
+        @media (max-width: 600px) {
+            #container {
+            grid-template-columns: 49% 49%;
+            gap: 2%;
+            }
+            .cat, #hicust {
+                display: none;
+            }
+            #search {
+                width: 100%;
+            }
+            #nav img {
+                margin-left: 40%;
+                margin-bottom: 5px;
+            }
+            #cart {
+                margin-left: 93%;
+            }
+            #cart button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -150,6 +173,9 @@
             pic.src = el.Image[0];
             Name.textContent = el.Name;
             cost.textContent = el.Price;
+            addToBas.onclick = function() {
+                addToCart(el);
+            }
             cost.setAttribute("class", "bolder");
             nDiv.onmouseenter = function() {
                 slideShow(el, pic);
@@ -181,6 +207,12 @@
         pic.src = el.Image[0];
     } 
 
+
+    function addToCart(outfit) {
+        var obj = {
+
+        }
+    }
     
     
 
