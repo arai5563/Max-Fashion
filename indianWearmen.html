@@ -162,6 +162,7 @@
                 <option value="rl">Relevance</option>
                 <option value="HL">Price-High to Low</option>
                 <option value="LH">Price-Low to High</option>
+                <option value="alpha">Alphabetic</option>
             </select>
         </form>
     </div>
@@ -282,6 +283,11 @@
         {
             createCat(menIndianwear);
         }
+
+        else if(frm[0].childNodes[3].value == "alpha")
+        {
+            sortAlpha();
+        }
     }
 
 
@@ -297,6 +303,19 @@
     function sortLowHigh() {
         var arr = men_indianwear.sort(function(a, b) {
             return a.Price - b.Price;
+        });
+
+        createCat(arr);
+    }
+
+    function sortAlpha() {
+        var arr = men_indianwear.sort(function(a, b) {
+            if (a.Name < b.Name) {
+                return -1;
+            }
+            if (a.Name > b.Name) {
+                return 1;
+            }
         });
 
         createCat(arr);
