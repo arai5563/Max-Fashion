@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Boys Indian Wear</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav {
+            padding: 10px 15px;
+            background-color: #F7F8F7;
+            margin-bottom: 20px;
+        }
+        #nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        #nav button {
+            height: 40px;
+            vertical-align: middle;
+            width: 70px;
+            border: none;
+            background-color: #F7F8F7;
+            font-weight: 600;
+        }
+        #search > input {
+            height: 36px;
+            vertical-align: middle;
+            width: 94%;
+            outline: none;
+            border: none;
+            background-color: #ECEDEB;
+            vertical-align: middle;
+        }
+        #hicust {
+            display: inline-block;
+            width: 100px;
+            border-right: 1px solid #ECEDEB;
+        }
+        #search {
+            background-color: #ECEDEB;
+            display: inline-block;
+            width: 35%;
+            margin-right: 17%;
+        }
+        #search i {
+            color: #757575;
+            vertical-align: middle;
+        }
+        #cart {
+            display: inline-block;
+            width: 7%;
+        } 
+        #cart > i, #cart > button {
+            vertical-align: middle;
+        } 
+        .cat:hover {
+            color: #303AB2;
+        }
+        #hicust > button {
+            width: 95px;
+        }
+        p {
+            font-size: 13px;
+        }
+        h1 {
+            font-weight: 400;
+            margin-left: 5%;
+        }
+        #container {
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 24% 24% 24%;
+            gap: 1.33%;
+            justify-content: center;
+        }
+        #container img {
+            width: 100%;
+        }
+        #container button {
+            width: 100%;
+            background-color: #303AB2;
+            height: 50px;
+            color: white;
+            border: none;
+            border-radius: 3%;
+        }
+        .bolder {
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href=""><button class="cat">Women</button></a>
+        <a href=""><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href=""><button class="cat">Boys</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <div id="hicust">
+            <button id="hi"></button>
+            
+        </div>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+
+    <h1>Indian Wear</h1>
+    <div id="container">
+    
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    var welcome = document.getElementById("hi");
+    var con = JSON.parse(localStorage.getItem("contacts"));
+    welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+
+
+
+    let data = [
+{
+    name : "Max Printed Brand Collar Kurta",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010420679-Red-Burgundy-1000010420679-9072021_01-2100.jpg"
+    
+},
+{
+    name : "Max Solid Elasted Pyjamas",
+    price: "349",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010332533-White-White-1000010332533-8182021_01-2100.jpg"
+    
+},
+{
+    name : "Max Solid Elasticated Pyjama",
+    price: "399",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010228366-Beige-Offwhite-1000010228366-8272021_01-2100.jpg"
+    
+},
+{
+    name : "Max Textured kurta with Solid Elasticated",
+    price: "799",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010607205-Orange-Rustc-1000010607205-9032021_01-2100.jpg"
+    
+},
+{
+    name : "Max Printed Full Sleeves Kurta",
+    price: "499",
+    img:"https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010418039-White-White-1000010418039-8132021_01-2100.jpg"
+},
+{
+    name : "Max Textured Full Sleeves Kurta",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010420652-Orange-Rustc-1000010420652-8132021_01-2100.jpg",
+},
+{
+    name : "Max Printed Ethic Long Kurta",
+    price: "449",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010420670-Grey-Grey-1000010420670-8272021_01-2100.jpg",
+},
+{
+    name : "MAX Solid Elasticated Churidar",
+    price: "349",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010503796-White-White-1000010503796-9152021_01-2100.jpeg",
+},
+{
+    name : "Max Printed Full Sleeves Kurta",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010228388-Beige-Beige-1000010228388-8132021_01-2100.jpg",
+},
+
+];
+
+let parent = document.getElementById("container");
+
+data.forEach(function(product){
+    console.log(product.name);
+
+    let div = document.createElement("div");
+
+  
+   
+   var addToBas = document.createElement("button");
+   addToBas.textContent = "ADD TO BASKET";
+  addToBas.onclick = function () {
+      addtoCart (product);
+  }
+  
+
+    let img =document.createElement("img");
+     img.src = product.img
+
+   let product_name = document.createElement("p");
+   product_name.textContent = product.name;
+
+ let product_price = document.createElement("p");
+    product_price.textContent = product.price;
+
+    product_price.setAttribute("class", "bolder");
+
+   
+   div.append(img,product_price,product_name,addToBas);
+   parent.appendChild(div);
+
+});
+if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+  }
+
+function  addtoCart (product) {
+    
+
+         let product_cart = JSON.parse( localStorage.getItem("cart"));
+   
+         var obj = {
+                     image: product.img,
+                     description : product.name,
+                     price:product.price,
+
+         }
+
+         product_cart.push(obj);
+
+   
+         localStorage.setItem("cart",JSON.stringify(product_cart));
+   
+         console.log(product_cart)
+   
+     
+
+   
+}
+
+
+
+   
+  
+
+
+
+
+</script>
