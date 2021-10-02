@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Boys | Shirts</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav {
+            padding: 10px 15px;
+            background-color: #F7F8F7;
+            margin-bottom: 20px;
+        }
+        #nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        #nav button {
+            height: 40px;
+            vertical-align: middle;
+            width: 70px;
+            border: none;
+            background-color: #F7F8F7;
+            font-weight: 600;
+        }
+        #search > input {
+            height: 36px;
+            vertical-align: middle;
+            width: 94%;
+            outline: none;
+            border: none;
+            background-color: #ECEDEB;
+            vertical-align: middle;
+        }
+        #hicust {
+            display: inline-block;
+            width: 100px;
+            border-right: 1px solid #ECEDEB;
+        }
+        #search {
+            background-color: #ECEDEB;
+            display: inline-block;
+            width: 35%;
+            margin-right: 17%;
+        }
+        #search i {
+            color: #757575;
+            vertical-align: middle;
+        }
+        #cart {
+            display: inline-block;
+            width: 7%;
+        } 
+        #cart > i, #cart > button {
+            vertical-align: middle;
+        } 
+        .cat:hover {
+            color: #303AB2;
+        }
+        #hicust > button {
+            width: 95px;
+        }
+        p {
+            font-size: 13px;
+        }
+        h1 {
+            font-weight: 400;
+            margin-left: 5%;
+        }
+        #container {
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 24% 24% 24%;
+            gap: 1.33%;
+            justify-content: center;
+        }
+        #container img {
+            width: 100%;
+        }
+        #container button {
+            width: 100%;
+            background-color: #303AB2;
+            height: 50px;
+            color: white;
+            border: none;
+            border-radius: 3%;
+        }
+        .bolder {
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href=""><button class="cat">Women</button></a>
+        <a href=""><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href=""><button class="cat">Boys</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <div id="hicust">
+            <button id="hi"></button>
+            
+        </div>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+
+    <h1>Shirts</h1>
+    <div id="container">
+    
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    var welcome = document.getElementById("hi");
+    var con = JSON.parse(localStorage.getItem("contacts"));
+    welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+
+
+
+    let data = [
+{
+    name : "Max Printed Roll-Up Sleeve Shirt",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010192562-Blue-Navy-1000010192562-9012021_01-2100.jpg"
+    
+},
+{
+    name : "Max Printed Full Sleeves Casual Shirt",
+    price: "649",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010417731-Black-Black-1000010417731-9152021_01-2100.jpg"
+    
+},
+{
+    name : "Max Printed Shirt With Bow",
+    price: "649",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010192419-Red-Maroon-1000010192419-9072021_01-2100.jpg"
+    
+},
+{
+    name : "Max Checked Regular Fit Casual Shirt",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000009892868-Multicolour-M-1000009892868-2052021_01-2100.jpg"
+    
+},
+{
+    name : "Max Striped Hooded Shirt",
+    price: "499",
+    img:"https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000009892725-Blue-Blue-1000009892725-4092021_01-2100.jpg"
+},
+{
+    name : "Max Checked Regular Fit Casual Shirt",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010234229-Blue-Blue-1000010234229-7292021_01-2100.jpg",
+},
+{
+    name : "Max Printed Full Sleeves Casual Shirt",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010234148-Multicolour-M-1000010234148_01-2100.jpg",
+},
+{
+    name : "Max Checked Regular Fit Casual Shirt",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010192485-Blue-Blue-1000010192485-8052021_01-2100.jpg",
+},
+{
+    name : "Max Checked Regular Fit Casual Shirt",
+    price: "599",
+    img:   "https://lmsin.net/cdn-cgi/image/h=1125,w=1125,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000009892791-Green-Green-1000009892791-4092021_01-2100.jpg"
+},
+
+];
+
+let parent = document.getElementById("container");
+
+data.forEach(function(product){
+    console.log(product.name);
+
+    let div = document.createElement("div");
+
+  
+   
+   var addToBas = document.createElement("button");
+   addToBas.textContent = "ADD TO BASKET";
+  addToBas.onclick = function () {
+      addtoCart (product);
+  }
+  
+
+    let img =document.createElement("img");
+     img.src = product.img
+
+   let product_name = document.createElement("p");
+   product_name.textContent = product.name;
+
+ let product_price = document.createElement("p");
+    product_price.textContent = product.price;
+
+    product_price.setAttribute("class", "bolder");
+
+   
+   div.append(img,product_price,product_name,addToBas);
+   parent.appendChild(div);
+
+});
+if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+  }
+
+function  addtoCart (product) {
+    
+
+         let product_cart = JSON.parse( localStorage.getItem("cart"));
+   
+         var obj = {
+                     image: product.img,
+                     description : product.name,
+                     price:product.price,
+
+         }
+
+         product_cart.push(obj);
+
+   
+         localStorage.setItem("cart",JSON.stringify(product_cart));
+   
+         console.log(product_cart)
+   
+     
+
+   
+}
+
+
+</script>
