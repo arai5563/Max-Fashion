@@ -93,6 +93,18 @@
             font-weight: bolder;
         }
 
+        #sort {
+            margin-left: 80%;
+            margin-bottom: 10px;
+        }
+        #sort select {
+            height: 30px;
+        }
+        #sort label {
+            color: #757575;
+            font-weight: 500;
+        }
+
         @media (max-width: 600px) {
             #container {
             grid-template-columns: 49% 49%;
@@ -121,9 +133,9 @@
     <div id="nav">
         <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
         <a href=""><button class="cat">Women</button></a>
-        <a href=""><button class="cat">Men</button></a>
+        <a href="Mensection.html"><button class="cat">Men</button></a>
         <a href=""><button class="cat">Girls</button></a>
-        <a href=""><button class="cat">Boys</button></a>  
+        <a href="boysSection.html"><button class="cat">Boys</button></a>  
         <div id="search">
             <i class='bx bx-search'> </i>
             <input placeholder="What are you looking for?"/>
@@ -132,7 +144,7 @@
             <div id="hicust">
                 <button id="hi"></button>  
             </div>
-        </a>
+        </a>   
         <a href="cart.html">
             <div id="cart">
                 <button>Basket</button>
@@ -143,6 +155,17 @@
 
 
     <h1>Indian Wear</h1>
+    <div id="sort">
+        <form>
+            <label>Sort by</label>
+            <select>
+                <option value="rl">Relevance</option>
+                <option value="HL">Price-High to Low</option>
+                <option value="LH">Price-Low to High</option>
+            </select>
+        </form>
+    </div>
+    
     <div id="container">
     
     </div>
@@ -160,10 +183,19 @@
     var products = document.getElementById("container");
 
     var men_indianwear = JSON.parse(localStorage.getItem("menIndianwear"));
+    var menIndianwear = [...men_indianwear];
+
+    var frm = document.getElementsByTagName("form");
+
+    frm[0].childNodes[3].onblur = function() {
+        sortByChoice();
+    }
+    
 
     
 
     function createCat(MIW) {
+        products.innerHTML = null;
         MIW.forEach(el => {
             var nDiv = document.createElement("div");
             var pic = document.createElement("img");
@@ -208,16 +240,67 @@
         pic.src = el.Image[0];
     } 
 
+    if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+    }
+
 
     function addToCart(outfit) {
-        var obj = {
+        let product_cart = JSON.parse( localStorage.getItem("cart"));
+   
+         var obj = {
+                     image: outfit.Image[0],
+                     description : outfit.Name,
+                     price: outfit.Price,
 
-        }
+         }
+
+         product_cart.push(obj);
+
+   
+         localStorage.setItem("cart",JSON.stringify(product_cart));
     }
     
     
 
     createCat(men_indianwear);
+
+
+    function sortByChoice() {
+
+        if(frm[0].childNodes[3].value == "HL")
+        {
+            sortHighLow();
+        }
+
+        else if(frm[0].childNodes[3].value == "LH")
+        {
+            sortLowHigh();
+        }
+
+        else if(frm[0].childNodes[3].value == "rl")
+        {
+            createCat(menIndianwear);
+        }
+    }
+
+
+    function sortHighLow() {
+        var arr = men_indianwear.sort(function(a, b) {
+            return b.Price - a.Price;
+        });
+
+        createCat(arr);
+    }
+
+
+    function sortLowHigh() {
+        var arr = men_indianwear.sort(function(a, b) {
+            return a.Price - b.Price;
+        });
+
+        createCat(arr);
+    }
 
 
 </script>

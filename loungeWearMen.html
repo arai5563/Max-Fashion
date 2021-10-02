@@ -98,9 +98,9 @@
     <div id="nav">
         <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
         <a href=""><button class="cat">Women</button></a>
-        <a href=""><button class="cat">Men</button></a>
+        <a href="Mensection.html"><button class="cat">Men</button></a>
         <a href=""><button class="cat">Girls</button></a>
-        <a href=""><button class="cat">Boys</button></a>  
+        <a href="boysSection.html"><button class="cat">Boys</button></a>  
         <div id="search">
             <i class='bx bx-search'> </i>
             <input placeholder="What are you looking for?"/>
@@ -150,12 +150,36 @@
             pic.src = el.Image;
             Name.textContent = el.Name;
             cost.textContent = el.Price;
+            addToBas.onclick = function() {
+                addToCart(el);
+            }
             cost.setAttribute("class", "bolder");
             nDiv.append(pic, Name, cost, addToBas);
             products.appendChild(nDiv);
         });
     }
 
+
+    if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+    }
+
+
+    function addToCart(outfit) {
+        let product_cart = JSON.parse( localStorage.getItem("cart"));
+   
+         var obj = {
+                     image: outfit.Image[0],
+                     description : outfit.Name,
+                     price: outfit.Price,
+
+         }
+
+         product_cart.push(obj);
+
+   
+         localStorage.setItem("cart",JSON.stringify(product_cart));
+    }
 
     createCat(men_longe);
 
