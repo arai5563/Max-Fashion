@@ -173,6 +173,8 @@
     var inpt = document.getElementsByTagName("input");
     console.log(inpt);
 
+    var state = document.querySelector("select");
+
     var btn = document.getElementsByTagName("button");
     btn[0].addEventListener("click", checkPayment);
 
@@ -210,6 +212,7 @@
                             {
                                 inpt[j].value = "";
                             }
+                            state.value = "";
                         }
                         else
                         alert("Card expired");
