@@ -265,6 +265,9 @@
 </body>
 </html>
 <script>
+    var welcome = document.getElementById("hi");
+    var con = JSON.parse(localStorage.getItem("contacts"));
+    welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
 
 var welcome = document.getElementById("hi");
     var con = JSON.parse(localStorage.getItem("contacts"));
