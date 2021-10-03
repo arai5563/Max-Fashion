@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Ethnic Bottom</title>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        #nav {
+            padding: 10px 15px;
+            background-color: #F7F8F7;
+            margin-bottom: 20px;
+        }
+        #nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        #nav button {
+            height: 40px;
+            vertical-align: middle;
+            width: 70px;
+            border: none;
+            background-color: #F7F8F7;
+            font-weight: 600;
+        }
+        #search > input {
+            height: 36px;
+            vertical-align: middle;
+            width: 94%;
+            outline: none;
+            border: none;
+            background-color: #ECEDEB;
+            vertical-align: middle;
+        }
+        #hicust {
+            display: inline-block;
+            width: 100px;
+            border-right: 1px solid #ECEDEB;
+        }
+        #search {
+            background-color: #ECEDEB;
+            display: inline-block;
+            width: 35%;
+            margin-right: 17%;
+        }
+        #search i {
+            color: #757575;
+            vertical-align: middle;
+        }
+        #cart {
+            display: inline-block;
+            width: 7%;
+        } 
+        #cart > i, #cart > button {
+            vertical-align: middle;
+        } 
+        .cat:hover {
+            color: #303AB2;
+        }
+        #hicust > button {
+            width: 95px;
+        }
+        p {
+            font-size: 13px;
+        }
+        h1 {
+            font-weight: 400;
+            margin-left: 5%;
+        }
+        #container {
+            width: 90%;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 23% 23% 23% 23%;
+            gap: 1.33%;
+            justify-content: center;
+            height:50%;
+        }
+        #container img {
+            width: 100%;
+        }
+        #container button {
+            width: 100%;
+            background-color: #303AB2;
+            height: 50px;
+            color: white;
+            border: none;
+            border-radius: 3%;
+        }
+        .bolder {
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="Mensection.html"> <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5c483f01b2739.png"/> </a>
+        <a href="women.html"><button class="cat">Women</button></a>
+        <a href="Mensection.html"><button class="cat">Men</button></a>
+        <a href=""><button class="cat">Girls</button></a>
+        <a href="Boysection.html"><button class="cat">Boy</button></a>  
+        <div id="search">
+            <i class='bx bx-search'> </i>
+            <input placeholder="What are you looking for?"/>
+        </div>
+        <a href="signup.html">
+            <div id="hicust">
+                <button id="hi"></button>  
+            </div>
+        </a>   
+        <a href="cart.html">
+            <div id="cart">
+                <button>Basket</button>
+                <i class='bx bxs-briefcase'></i>
+            </div>     
+        </a>
+    </div>
+
+
+    <h1>Ethnic Bottoms Wear</h1>
+    <div id="container">
+    
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    //var welcome = document.getElementById("hi");
+    //var con = JSON.parse(localStorage.getItem("contacts"));
+    //welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+
+
+
+    let data = [
+{
+    name : "MAX Solid Elasticated Chudidar",
+    price: "399",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010441040-Beige-Offwhite-1000010441040-9012021_01-2100.jpg"
+    
+},
+{
+    name : "MAX Solid Elasticated Leggings",
+    price: "1699",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010359185-Yellow-Gold-1000010359185-8132021_01-2100.jpg"
+    
+},
+{
+    name : "MAX Solid Knitted Ankle-Length Leggings",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010359315-White-White-1000010359315-8182021_01-2100.jpg"
+    
+},
+{
+    name : "MAX Printed Straight Pants",
+    price: "499",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010033290-White-White-1000010033290-3172021_01-2100.jpg"
+    
+},
+{
+    name : "MAX Printed Elasticated Joggers",
+    price: "1049",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010123216-Blue-Blue-1000010123216-7012021_01-2100.jpg"
+},
+{
+    name : "MAX Lace Detailed Palazzos",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010033329-Beige-Offwhite-1000010033329-6252021_01-2100.jpg",
+},
+{
+    name : "MAX Solid Salwar",
+    price:"699",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000009699805-Black-Black-1000009699805-1042020_01-2100.jpg"
+},
+{
+    name : "MAX Solid Straight Pants",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010085618-Beige-Natural-1000010085618-7012021_01-2100.jpg",
+},
+
+{
+    name : "MAX Floral Maxi Skirt",
+    price: "599",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010344499-Green-Green-1000010344499-8132021_01-2100.jpg",
+},
+{
+    name : "MAX Printed Woven Pants",
+    price: "1049",
+    img: "https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000008853489-Yellow-Mustard-1000008853489-3132020_01-2100.jpg",
+},
+{
+    name:"MAX Embroidered Palazzos",
+    price:"999",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010033316-Yellow-Gold-1000010033316-3222021_01-2100.jpg",
+},
+{
+    name:"MAX Solid Elasticated Culottes",
+    price:"1299",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000009699909-Beige-Offwhite-1000009699909-12082020_01-2100.jpg",
+},
+{
+    name:"MAX Solid Elasticated Straight Pants",
+    price:"899",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010033239-Green-Lightg-1000010033239-3172021_01-2100.jpg",
+},
+{
+    name:"MAX Checked Trousers",
+    price:"699",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010085475-Grey-Grey-1000010085475-4092021_01-2100.jpg",
+},
+{
+    name:"MAX Floral Printed Palazzos",
+    price:"1199",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010367964-Brown-Brown-1000010367964-8052021_01-2100.jpg",
+},
+{
+    name:"MAX Printed Culottes",
+    price:"799",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010085371-Grey-Grey-1000010085371-3172021_01-2100.jpg",
+},
+{
+    name:"MAX Printed Elasticated Culottes",
+    price:"499",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000008854876-Orange-Coral-1000008854876-7072021_01-2100.jpg",
+},
+{
+    name:"MAX Striped Woven Palazzos",
+    price:"999",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010367977-Brown-Brown-1000010367977-8132021_01-2100.jpg",
+},
+{
+    name:"MAX Printed Dhoti Pants",
+    price:"1199",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010330968-Black-Black-1000010330968-7152021_01-2100.jpg",
+},
+{
+    name:"MAX Solid Elasticated Flared Pants",
+    price:"1049",
+    img:"https://lmsin.net/cdn-cgi/image/h=831,w=615,q=90,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/max/1000010344551-Blue-Navy-1000010344551-8052021_01-2100.jpg",
+}
+
+];
+
+let parent = document.getElementById("container");
+
+data.forEach(function(product){
+    console.log(product.name);
+
+    let div = document.createElement("div");
+
+  
+   
+   var addToBas = document.createElement("button");
+   addToBas.textContent = "ADD TO BASKET";
+  addToBas.onclick = function () {
+      addtoCart (product);
+  }
+  
+
+    let img =document.createElement("img");
+     img.src = product.img
+
+   let product_name = document.createElement("p");
+   product_name.textContent = product.name;
+
+ let product_price = document.createElement("p");
+    product_price.textContent = product.price;
+
+    product_price.setAttribute("class", "bolder");
+
+   
+   div.append(img,product_price,product_name,addToBas);
+   parent.appendChild(div);
+
+});
+if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+  }
+
+function  addtoCart (product) {
+    
+
+         let product_cart = JSON.parse( localStorage.getItem("cart"));
+   
+         var obj = {
+                     image: product.img,
+                     description : product.name,
+                     price:product.price,
+
+         }
+
+         product_cart.push(obj);
+
+   
+         localStorage.setItem("cart",JSON.stringify(product_cart));
+   
+         console.log(product_cart)
+   
+     
+
+   
+}
+
+
+
+   
+  
+
+
+
+
+</script>
