@@ -210,7 +210,7 @@
             addToBas.textContent = "ADD TO BASKET";
             pic.src = el.Image[0];
             Name.textContent = el.Name;
-            cost.textContent = el.Price;
+            cost.textContent = "₹" + " " + el.Price;
             addToBas.onclick = function() {
                 addToCart(el);
             }
