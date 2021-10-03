@@ -212,7 +212,7 @@ data.forEach(function(product){
    product_name.textContent = product.name;
 
  let product_price = document.createElement("p");
-    product_price.textContent = product.price;
+    product_price.textContent ="₹" + " " + product.price;
 
     product_price.setAttribute("class", "bolder");
 
