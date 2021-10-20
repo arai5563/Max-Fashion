@@ -72,16 +72,55 @@ var frm = document.getElementsByTagName("form");
 
 
     var users = document.getElementsByTagName("input");
+    let array = ["com", "co", "org", "net", "us"];
 
 
     function saveDetails() {
-        if(users[0].value != "" && users[1].value != "")
+        users[0].value = users[0].value.trim();
+        users[1].value = users[1].value.trim();
+        let flag = false;
+        let len = users[0].value.length;
+        if(len > 9)
         {
-            users[0].value = "";
-            window.location.href = "personal.html";
+            let check = "";
+            for(let j = len-1; j>=0; j--)
+            {
+                if(users[0].value[j] == ".")
+                {
+                    var m = j+1;
+                    break;
+                }
+            }
+            for(let a = m; a<len; a++)
+            {
+                check = check + users[0].value[a];
+            }
+            for(let x = 0; x<array.length; x++)
+            {
+                if(check == array[x])
+                {
+                    for(let y = m-4; y>=1; y--)
+                    {
+                        if(users[0].value[y] == "@")
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+            }
+        }
+        if(flag)
+        {
+            if(users[1].value.length > 7)
+            {
+                users[1].value = "";
+                window.location.href = "personalDetails.html";
+            }
+            else
+            alert("Password must have atleast 8 character");
         }
         else
-        alert("Fill the details completely");
+        alert("Enter the valid email");
     }
 
 
