@@ -11,6 +11,23 @@
         * {
             font-family: 'Inter', sans-serif;
         }
+        .footer {
+            display: flex;
+            padding: 3%;
+            margin-top: 0px;
+        }
+        .footer > div {
+            margin: 0 3%;
+            font-size: smaller;
+            flex-basis: 14%;
+        }
+        .footer p {
+            font-weight: 300;
+        }
+        hr {
+            size: 1px;
+            color: #f1ebeb;
+        }
         #nav {
             padding: 10px 15px;
             background-color: #F7F8F7;
@@ -46,7 +63,7 @@
             background-color: #ECEDEB;
             display: inline-block;
             width: 35%;
-            margin-right: 17%;
+            margin-right: 14%;
         }
         #search i {
             color: #757575;
@@ -94,6 +111,14 @@
         .bolder {
             font-weight: 800;
         }
+        #product_count {
+            width: 30px;
+            height: 30px;
+            background-color: tomato;
+            border: none;
+            text-align: center;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +143,8 @@
                 <i class='bx bxs-briefcase'></i>
             </div>     
         </a>
+    
+    <input id="product_count" type="number" readonly = "readonly"/>
     </div>
 
 
@@ -125,6 +152,73 @@
     <div id="container">
     
     </div>
+
+   <hr>
+
+<div class="footer">
+    <div>
+        <h4>Women</h4>
+        <p>Tops</p>
+        <p>Dresses & Jumpsuits</p>
+        <p>Sportswear</p>
+        <p>Bottoms</p>
+        <p>Winterwear</p>
+        <p>Ethnicwear</p>
+        <p>Sleepwear</p>
+        <p>Accessories</p>
+    </div>
+    <div>
+        <h4>Men</h4>
+        <p>Tops</p>
+        <p>Bottoms</p>
+        <p>Sportswear</p>
+        <p>Winterwear</p>
+        <p>Accessories</p>
+        <p>Shoes</p>
+    </div>
+    <div>
+     <h4>Girls</h4>
+     <p>Tops</p>
+     <p>Bottoms</p>
+     <p>Sportswear</p>
+     <p>Winterwear</p>
+     <p>Accessories</p>
+     <p>Shoes</p>
+    </div>
+    <div>
+     <h4>Boys</h4>
+     <p>Tops</p>
+     <p>Bottoms</p>
+     <p>Sportswear</p>
+     <p>Winterwear</p>
+     <p>Accessories</p>
+     <p>Shoes</p>
+    </div>
+    <div>
+         <h4>Explore</h4>
+        <p>Offers</p>
+        <p>Magazine</p>
+    </div>
+</div>
+<div class="footer">
+ <div>
+     <h4>About</h4>
+     <p>About us</p>
+     <p>Write to us</p>
+     <p>Careers</p>
+     <p>Take a Tour</p>
+     <p>Blog</p>
+     <p>Store Locator</p>
+ </div>
+ <div>
+     <h4>Help</h4>
+     <p>Contact us</p>
+     <p>Shipping</p>
+     <p>Returns Process</p>
+     <p>Returns Policy</p>
+     <p>Help Centre</p>
+ </div>
+</div>
 </body>
 </html>
 
@@ -136,6 +230,9 @@
     welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
 
 
+    let count = document.getElementById("product_count");
+    let product_cart = JSON.parse( localStorage.getItem("cart"));
+    count.value = product_cart.length;
 
 
     let data = [
@@ -260,11 +357,11 @@ function  addtoCart (product) {
          localStorage.setItem("cart",JSON.stringify(product_cart));
    
          console.log(product_cart)
-   
-     
-
-   
+  
 }
+
+
+
 
 
 </script>
