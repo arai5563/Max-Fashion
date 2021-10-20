@@ -139,7 +139,7 @@
             background-color: #ECEDEB;
             display: inline-block;
             width: 35%;
-            margin-right: 17%;
+            margin-right: 14%;
         }
         #search i {
             color: #757575;
@@ -148,6 +148,14 @@
        
         td {
             width: 250px;
+        }
+        #product_count {
+            width: 30px;
+            height: 30px;
+            background-color: tomato;
+            border: none;
+            text-align: center;
+            border-radius: 50%;
         }
 
       
@@ -177,7 +185,10 @@
             <div id="cart">
                 <button>Basket</button>
                 <i class='bx bxs-briefcase'></i>
+
+               
             </div>     
+            <input id="product_count" type="number" readonly = "readonly"/>
         </a>
 
         <div id="sec">
@@ -270,6 +281,9 @@
     var welcome = document.getElementById("hi");
     var con = JSON.parse(localStorage.getItem("contacts"));
     welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
+
+    
+    
 
 
 
