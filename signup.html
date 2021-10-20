@@ -80,6 +80,8 @@
     frm[0].childNodes[1].addEventListener("blur", repBorder);
     
 
+    let c = 1;
+
     var number = document.getElementsByTagName("input");
 
     if(localStorage.getItem("contacts") == null)
@@ -107,12 +109,16 @@
         }
         else
         {
-            var error = document.createElement("p");
-            error.textContent = "Please enter a valid 10-digit mobile number.";
-            error.style.fontSize = "12px";
-            error.style.marginLeft = "310px"
-            error.setAttribute("class", "check");
-            frm[0].appendChild(error);
+            if(c==1)
+            {
+                var error = document.createElement("p");
+                error.textContent = "Please enter a valid 10-digit mobile number.";
+                error.style.fontSize = "12px";
+                error.style.marginLeft = "310px"
+                error.setAttribute("class", "check");
+                frm[0].appendChild(error);
+                c++;
+            }  
         }
     }
 
