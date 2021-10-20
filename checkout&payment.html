@@ -171,7 +171,6 @@
     frm[0].childNodes[1].value = con[con.length - 1].First_Name + " " + con[con.length - 1].Last_Name;
     frm[1].childNodes[1].value = con[con.length - 1].Mobile;
     var inpt = document.getElementsByTagName("input");
-    console.log(inpt);
 
     var state = document.querySelector("select");
 
@@ -184,15 +183,21 @@
         for(let j = 0; j<6; j++)
         {
             inpt[j].value = inpt[j].value.trim();
-            if(inpt[j].value == "" || inpt[2].length != 6 || state.value == "")
-            c = false;
+            if(inpt[j].value == "" || inpt[2].value.length != 6 || state.value == "")
+            {
+                c = false;
+                console.log(inpt[j].value);
+            }
         }
 
         for(let j = 7; j<12; j++)
         {
             inpt[j].value = inpt[j].value.trim();
             if(inpt[j].value == "")
-            c = false;
+            {
+                c = false;
+                console.log(inpt[j].value);;
+            }
         }
         if(!c)
         {
@@ -240,5 +245,10 @@
         alert("Payment Successful");
         let X = [];
         localStorage.setItem("cart",JSON.stringify(X));
+        setTimeout(takeToHome, 5000);
+    }
+
+    function takeToHome() {
+        window.location.href = "Mensection.html";
     }
 </script>
