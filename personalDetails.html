@@ -77,6 +77,8 @@
     var users = document.getElementsByTagName("input");
 
     function saveDetails() {
+        users[0].value = users[0].value.trim();
+        users[1].value = users[1].value.trim();
         if(users[0].value != "" && users[1].value != "")
         {
             var con = JSON.parse(localStorage.getItem("contacts"));
@@ -88,7 +90,7 @@
             window.location.href = "Mensection.html";
         }
         else
-        alert("Fill the details completely");
+        alert("Please Enter Your Name");
     }
 
 
