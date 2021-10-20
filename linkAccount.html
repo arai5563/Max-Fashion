@@ -62,17 +62,51 @@
     frm[0].childNodes[1].addEventListener("focus", changeBorder);
     frm[0].childNodes[1].addEventListener("blur", repBorder);
     
+    let array = ["com", "co", "org", "net", "us"];
 
     var mail = document.getElementsByTagName("input");
 
+    let c = 1;
+
     function saveMail() {
-        if(mail[0].value.length != 0)
+        mail[0].value = mail[0].value.trim();
+        let flag = false;
+        let len = mail[0].value.length;
+        if(len > 9)
+        {
+            let check = "";
+            for(let j = len-1; j>=0; j--)
+            {
+                if(mail[0].value[j] == ".")
+                {
+                    var m = j+1;
+                    break;
+                }
+            }
+            for(let a = m; a<len; a++)
+            {
+                check = check + mail[0].value[a];
+            }
+            for(let x = 0; x<array.length; x++)
+            {
+                if(check == array[x])
+                {
+                    for(let y = m-4; y>=1; y--)
+                    {
+                        if(mail[0].value[y] == "@")
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+            }
+        }
+        if(flag)
         {
             var con = JSON.parse(localStorage.getItem("contacts"));
             con[con.length - 1].Email = mail[0].value;
             localStorage.setItem("contacts", JSON.stringify(con));
             var para = document.getElementsByClassName("check");
-            console.log(para);
             if(para[0] != undefined)
             {
                 para[0].remove();
@@ -82,12 +116,16 @@
         }
         else
         {
-            var error = document.createElement("p");
-            error.textContent = "Please enter a valid Email Id.";
-            error.setAttribute("class", "check");
-            error.style.fontSize = "12px";
-            error.style.marginLeft = "70%"
-            frm[0].appendChild(error);
+            if(c==1)
+            {
+                var error = document.createElement("p");
+                error.textContent = "Please enter a valid Email Id.";
+                error.setAttribute("class", "check");
+                error.style.fontSize = "12px";
+                error.style.marginLeft = "70%"
+                frm[0].appendChild(error);
+                c++;
+            }
         }
     }
 
