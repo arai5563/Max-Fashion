@@ -46,7 +46,7 @@
             background-color: #ECEDEB;
             display: inline-block;
             width: 35%;
-            margin-right: 17%;
+            margin-right: 14%;
         }
         #search i {
             color: #757575;
@@ -112,6 +112,14 @@
             size: 1px;
             color: #f1ebeb;
         }
+        #product_count {
+            width: 30px;
+            height: 30px;
+            background-color: tomato;
+            border: none;
+            text-align: center;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -136,6 +144,7 @@
                 <i class='bx bxs-briefcase'></i>
             </div>     
         </a>
+        <input id="product_count" type="number" readonly = "readonly"/>
     </div>
 
 
@@ -221,6 +230,10 @@
 
     var products = document.getElementById("container");
 
+    let count = document.getElementById("product_count");
+    let product_cart = JSON.parse( localStorage.getItem("cart"));
+    count.value = product_cart.length;
+
     var men_longe = JSON.parse(localStorage.getItem("menLounge"));
 
 
@@ -271,6 +284,8 @@
          }
 
          product_cart.push(obj);
+
+         count.value = product_cart.length;
 
    
          localStorage.setItem("cart",JSON.stringify(product_cart));
