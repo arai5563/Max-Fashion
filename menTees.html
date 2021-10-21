@@ -128,6 +128,10 @@
         #product_count::-webkit-outer-spin-button, #product_count::-webkit-inner-spin-button {
             -webkit-appearance: none;
         }
+        img:hover {
+            transform: scale(1.1);
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -248,19 +252,22 @@
     function createCat(MT) {
         MT.forEach(el => {
             var nDiv = document.createElement("div");
+            let img_div = document.createElement("div");
+            img_div.style.overflow = "hidden";
             var pic = document.createElement("img");
             var Name = document.createElement("p");
             var cost = document.createElement("p");
             var addToBas = document.createElement("button");
             addToBas.textContent = "ADD TO BASKET";
             pic.src = el.Image;
+            img_div.append(pic);
             Name.textContent = el.Name;
             cost.textContent = "₹" + " " + el.Price;
             addToBas.onclick = function() {
                 addToCart(el);
             }
             cost.setAttribute("class", "bolder");
-            nDiv.append(pic, Name, cost, addToBas);
+            nDiv.append(img_div, Name, cost, addToBas);
             products.appendChild(nDiv);
         });
     }
