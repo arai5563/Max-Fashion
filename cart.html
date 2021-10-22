@@ -53,8 +53,6 @@
         #checkout {
             margin: 30px 20px;
             width: 80%;
-            /* border: 2px solid black;
-            background-color: royalblue; */
      
         }
         .check_btn {
@@ -127,9 +125,7 @@
         }
         #max img {
             width: 20%;
-            /* padding: 10px 0; */
             margin-right: 10px;
-            /* vertical-align: top; */
         }
         .offr {
             margin-left: 5%; 
@@ -171,8 +167,8 @@
             border-radius: 50%;
             position: relative;
             text-align: center;
-            bottom: 16px;
-            right: 25px;
+            bottom: 15px;
+            right: 15px;
             font-size: smaller;
             outline: none;
         }
@@ -381,8 +377,6 @@ cart.forEach(function(product){
     sum = sum + +(product.price);
     total.value = sum;
     coun++;
-    // console.log(sum);
-    // console.log(total.value);
 
     product_price.setAttribute("class", "bolder");
 
@@ -395,7 +389,7 @@ cart.forEach(function(product){
    
 
 });
-console.log(parent.childNodes[2].childNodes);
+
 
 count.append(coun);
 
@@ -447,10 +441,7 @@ function cal_total(event) {
     var x = event.target.parentNode.parentNode;
       
     x.childNodes[4].childNodes[0].innerText = +(x.childNodes[3].childNodes[0].value) * +(x.childNodes[2].childNodes[0].innerText);
-   
-    // console.log(parent.childNodes.length)
 
-    // parent.childNodes[2].childNodes[4].childNodes[0].innerText
     total.value = "0";
 
     for(let i= 2; i<parent.childNodes.length;i++){
