@@ -574,6 +574,8 @@ function apply() {
 
 function cal_total(event) {
 
+    c = false;
+
     var x = event.target.parentNode.parentNode;
       
     x.childNodes[4].childNodes[0].innerText = +(x.childNodes[3].childNodes[0].value) * +(x.childNodes[2].childNodes[0].innerText);
