@@ -137,12 +137,20 @@
             gap: 2%;
         }
         #product_count {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             background-color: tomato;
             border: none;
-            text-align: center;
             border-radius: 50%;
+            position: relative;
+            text-align: center;
+            bottom: 16px;
+            right: 20px;
+            font-size: smaller;
+            outline: none;
+        }
+        #product_count::-webkit-outer-spin-button, #product_count::-webkit-inner-spin-button {
+            -webkit-appearance: none;
         }
     </style>
 </head>
@@ -405,22 +413,54 @@ let interval = setInterval (function(){
 
  });
 
- var c1 = parent.childNodes[1];
-
+var c1 = parent.childNodes[1];
 c1.onclick = function() {
     window.location.href = "boysIndianwear.html";
 }
 
 var c2 = parent.childNodes[2];
-
 c2.onclick = function() {
     window.location.href = "boyShirt.html";
 }
 
 var c3 = parent.childNodes[3];
-
 c3.onclick = function() {
     window.location.href = "boyTees&Polos.html";
+}
+
+var c4 = parent.childNodes[4];
+c4.onclick = function() {
+    window.location.href = "boyTees&Polos.html";
+}
+
+var c5 = parent.childNodes[5];
+c5.onclick = function() {
+    window.location.href = "boysIndianwear.html";
+}
+
+var c6 = parent.childNodes[6];
+c6.onclick = function() {
+    window.location.href = "boyShirt.html";
+}
+
+var c7 = parent.childNodes[7];
+c7.onclick = function() {
+    window.location.href = "boyTees&Polos.html";
+}
+
+var c8 = parent.childNodes[8];
+c8.onclick = function() {
+    window.location.href = "boyTees&Polos.html";
+}
+
+var c9 = parent.childNodes[9];
+c9.onclick = function() {
+    window.location.href = "boysIndianwear.html";
+}
+
+var c10 = parent.childNodes[10];
+c10.onclick = function() {
+    window.location.href = "boyShirt.html";
 }
 
 

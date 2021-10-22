@@ -102,22 +102,33 @@
             height: 350px;
         }
         #container button {
+            font-size: medium;
+            color: white;
+            font-weight: 900;
             width: 100%;
-            background-color: #303AB2;
+            background-color: yellowgreen;
             height: 50px;
             color: white;
-            border-radius: 3%;
+            border-radius: 25%;
         }
         .bolder {
             font-weight: 800;
         }
         #product_count {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             background-color: tomato;
             border: none;
-            text-align: center;
             border-radius: 50%;
+            position: relative;
+            text-align: center;
+            bottom: 16px;
+            right: 20px;
+            font-size: smaller;
+            outline: none;
+        }
+        #product_count::-webkit-outer-spin-button, #product_count::-webkit-inner-spin-button {
+            -webkit-appearance: none;
         }
     </style>
 </head>
@@ -315,7 +326,7 @@ data.forEach(function(product){
    var addToBas = document.createElement("button");
    addToBas.textContent = "ADD TO BASKET";
   addToBas.onclick = function () {
-      addtoCart (product);
+      addToCart(product);
   }
   
 
@@ -339,29 +350,36 @@ if (localStorage.getItem("cart")=== null) {
       localStorage.setItem("cart",JSON.stringify([]));
   }
 
-function  addtoCart (product) {
-    
-
-         let product_cart = JSON.parse( localStorage.getItem("cart"));
+  function addToCart(outfit) {
+        let product_cart = JSON.parse( localStorage.getItem("cart"));
+        let flag = true;
+        for(let x = 0; x<product_cart.length; x++)
+        {
+            if(product_cart[x].image == outfit.img)
+            {
+                flag = false;
+                break;
+            }
+        }
    
-         var obj = {
-                     image: product.img,
-                     description : product.name,
-                     price:product.price,
+         if(flag) {
+            var obj = {
+                     image: outfit.img,
+                     description : outfit.name,
+                     price: outfit.price,
 
          }
 
          product_cart.push(obj);
 
-   
-         localStorage.setItem("cart",JSON.stringify(product_cart));
-   
-         console.log(product_cart)
-   
-     
+         count.value = product_cart.length;
 
    
-}
+         localStorage.setItem("cart",JSON.stringify(product_cart));
+         }
+         else
+         alert("Product already in cart");
+    }
 
 
 </script>
