@@ -144,13 +144,17 @@
             border-radius: 50%;
             position: relative;
             text-align: center;
-            bottom: 16px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             font-size: smaller;
             outline: none;
         }
         #product_count::-webkit-outer-spin-button, #product_count::-webkit-inner-spin-button {
             -webkit-appearance: none;
+        }
+        button:hover, img:hover{
+            cursor: pointer;
+
         }
     </style>
 </head>
@@ -308,9 +312,6 @@
     count.value = product_cart.length;
 
 
-
-  
-
     let images = [
     "https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/21/539088fb-e4e9-41db-9f56-9c5fb5838a251632242372729-Mst-Levis_Desk_Banner.jpg",
     "https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/21/d6a317e7-6375-4509-840a-cc8a0a269b711632242372764-Mst-Boys-Indian-Wear.jpg",
@@ -321,7 +322,7 @@
 let container = document.getElementById("mySlideshow");
 
 function startSlideshow() {
-//1.
+
 
 let counter = 0;
 
@@ -393,7 +394,7 @@ let interval = setInterval (function(){
  let parent = document.getElementById("SbyC");
 
  data.forEach(function(product){
-     console.log(product.name);
+    
 
      let div = document.createElement("div");
 
@@ -472,6 +473,6 @@ if (localStorage.getItem("cart")=== null) {
       let product_cart = JSON.parse(localStorage.getItem("cart"));
       product_cart.push(p);
       localStorage.setItem("cart",JSON.stringify(product_cart));
-      console.log(product_cart)
+     
   };
 </script>
