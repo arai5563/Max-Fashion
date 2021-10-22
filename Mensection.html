@@ -336,6 +336,10 @@
     var con = JSON.parse(localStorage.getItem("contacts"));
     welcome.textContent = "Hi, " + con[con.length - 1].First_Name;
 
+    if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+    }
+
     let count = document.getElementById("product_count");
     let product_cart = JSON.parse( localStorage.getItem("cart"));
     count.value = product_cart.length;
@@ -354,9 +358,7 @@
 
     var shop_category = JSON.parse(localStorage.getItem("shopCat"));
 
-    if (localStorage.getItem("cart")=== null) {
-      localStorage.setItem("cart",JSON.stringify([]));
-    }
+    
 
 
     function createCat(SC) {
