@@ -354,6 +354,10 @@
 
     var shop_category = JSON.parse(localStorage.getItem("shopCat"));
 
+    if (localStorage.getItem("cart")=== null) {
+      localStorage.setItem("cart",JSON.stringify([]));
+    }
+
 
     function createCat(SC) {
         SC.forEach(el => {
