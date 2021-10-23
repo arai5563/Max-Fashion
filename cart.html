@@ -442,7 +442,8 @@
 
     let sum =0;
     let coun = 0;
-   
+    let flag = false;
+    
    
  
 
@@ -497,6 +498,12 @@ cart.forEach(function(product){
 
     }
 
+    qty.onfocus = function () {
+
+   check(event);
+
+   }
+
     
 
    
@@ -524,6 +531,7 @@ cart.forEach(function(product){
 
 });
 
+ 
 count.append(coun);
 
 var c = false;
@@ -572,19 +580,31 @@ function apply() {
 
 }
 
+function check(event){
+     flag = true;
+ }
+
 function cal_total(event) {
 
-    var x = event.target.parentNode.parentNode;
+    if (c && flag){
+        c = false;
+        alert ("Promocode Removed");
+    }
+     if (flag){
+        var x = event.target.parentNode.parentNode;
       
-    x.childNodes[4].childNodes[0].innerText = +(x.childNodes[3].childNodes[0].value) * +(x.childNodes[2].childNodes[0].innerText);
-    total.value = "0";
+      x.childNodes[4].childNodes[0].innerText = +(x.childNodes[3].childNodes[0].value) * +(x.childNodes[2].childNodes[0].innerText);
+      total.value = "0";
+  
+      for(let i= 2; i<parent.childNodes.length;i++){
+  
+          total.value = +(total.value) + (+parent.childNodes[i].childNodes[4].childNodes[0].innerText);
+      }
 
-    for(let i= 2; i<parent.childNodes.length;i++){
-
-        total.value = +(total.value) + (+parent.childNodes[i].childNodes[4].childNodes[0].innerText);
-    }
-     
-    }
+      flag = false;
+       
+     }
+ }
 
 
    
