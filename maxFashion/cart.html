@@ -227,6 +227,9 @@
      #fthr {
          margin-top: 50px;
      }
+     select {
+         outline: none;
+     }
     </style>
 </head>
 <body>
@@ -589,6 +592,8 @@ function check(event){
  }
 
 function cal_total(event) {
+    
+    event.target.blur();
 
     if (c && flag){
         c = false;
