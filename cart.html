@@ -590,17 +590,14 @@ function check(event){
 
 function cal_total(event) {
 
-<<<<<<< HEAD
     if (c && flag){
         c = false;
         alert ("Promocode Removed");
     }
      if (flag){
         var x = event.target.parentNode.parentNode;
-=======
 
     var x = event.target.parentNode.parentNode;
->>>>>>> bb03571f6f1f68790b618873f5cf416c81590a13
       
       x.childNodes[4].childNodes[0].innerText = +(x.childNodes[3].childNodes[0].value) * +(x.childNodes[2].childNodes[0].innerText);
       total.value = "0";
