@@ -59,12 +59,11 @@ In this project we tried to utilize our learning outcomes of unit 1 and 2  of Fu
 
 
 ## How To Run The Project
-1. Firstly run http://127.0.0.1:5501/LocalStorageFiles/local.html on your system to store all product details in your local storage.
-2. Then click on http://127.0.0.1:5501/maxFashion/signup.html to reach the sign-up page where you need to enter mobile number for referance.
-3. After entering mobile number you will land on link account page where you will enter your email id for authentication.
-4. Alternate of step 2 and 3 is you can choose login with email option on sign-up page.
-5. After above authentication process browser will take you to the men section.
-6. From there on you can navigate throughout the site using navigation bar to add to product to basket and make payment to checkout(using checkout section).
+1. First click on http://127.0.0.1:5501/maxFashion/signup.html to reach the sign-up page where you need to enter mobile number for referance.
+2. After entering mobile number you will land on link account page where you will enter your email id for authentication.
+3. Alternate of step 1 and 2 is you can choose login with email option on sign-up page.
+4. After above authentication process browser will take you to the men section.
+5. From there on you can navigate throughout the site using navigation bar to add to product to basket and make payment to checkout(using checkout section).
 
 ## End Notes 🧾
 In this project we tried to the best of our ability to replicate all the functionality and also nearly complete UI of the site. This was a great learning curve as initially it seemed imposible to acheive the objective but with time as we kept on learning new tools and technique during construct week we finally tasted the success in completing the project.
