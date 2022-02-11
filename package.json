@@ -1,0 +1,19 @@
+{
+  "name": "max-fashion",
+  "version": "1.0.0",
+  "description": "Project: Cloning [Max Fashion](https://www.maxfashion.in/in/en/department/maxmen) site.",
+  "main": "index.html",
+  "scripts": {
+    "build": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arai5563/Max-Fashion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arai5563/Max-Fashion/issues"
+  },
+  "homepage": "https://github.com/arai5563/Max-Fashion#readme"
+}
